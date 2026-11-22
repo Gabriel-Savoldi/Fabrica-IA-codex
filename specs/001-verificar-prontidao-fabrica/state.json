@@ -10,7 +10,7 @@
     "build": null
   },
   "last_reviewed_commit": null,
-  "stage": "AGUARDANDO_REVISAO_HUMANA",
+  "stage": "ESPECIFICACAO_APROVADA",
   "artifacts": {
     "spec": {
       "path": "specs/001-verificar-prontidao-fabrica/spec.md",
@@ -27,7 +27,7 @@
       "base_commit": "acd267249926bb2a29464c43910d0786666977a5"
     },
     "E1": {
-      "status": "aguardando_revisao_humana",
+      "status": "aprovado",
       "checklist": "16/16",
       "devolucoes": 0
     }
@@ -36,8 +36,10 @@
   "blockers": [],
   "human_checkpoints": {
     "specification_review": {
-      "status": "pendente"
+      "status": "aprovado",
+      "aprovado_em": "2026-11-22T08:59:46.7658647-03:00",
+      "mensagem": "Aprovo a especificação `001-verificar-prontidao-fabrica`. Registre a aprovação e pare. Vou pedir o plano técnico depois."
     }
   },
-  "updated_at": "2026-11-22T08:52:10.0661906-03:00"
+  "updated_at": "2026-11-22T08:59:46.7658647-03:00"
 }
