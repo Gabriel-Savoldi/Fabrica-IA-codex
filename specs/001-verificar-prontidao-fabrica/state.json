@@ -5,12 +5,12 @@
   "gh_path": "gh",
   "pull_request": null,
   "commands": {
-    "test": null,
+    "test": "& {\n    $readme = Get-Content -LiteralPath 'README.md' -Raw -Encoding UTF8 -ErrorAction Stop\n    $sections = [regex]::Matches($readme, '(?ms)^## Como verificar se a fábrica está pronta\\r?\\n(?<section>.*?)(?=^#{1,2}[ \\t]+|\\z)')\n    if ($sections.Count -ne 1) {\n        throw 'Esperava exatamente uma seção Como verificar se a fábrica está pronta.'\n    }\n    $section = $sections[0].Groups['section'].Value\n    foreach ($command in @('git branch --show-current', 'git status --porcelain', 'git remote get-url origin', 'gh auth status')) {\n        if (-not $section.Contains(('`' + $command + '`'))) {\n            throw \"Comando ausente na seção ($command).\"\n        }\n    }\n    Write-Output 'Título confirmado e 4 de 4 comandos encontrados.'\n}",
     "lint": null,
     "build": null
   },
   "last_reviewed_commit": null,
-  "stage": "ESPECIFICACAO_APROVADA",
+  "stage": "ANALISANDO",
   "artifacts": {
     "spec": {
       "path": "specs/001-verificar-prontidao-fabrica/spec.md",
@@ -19,6 +19,22 @@
     "requirements_checklist": {
       "path": "specs/001-verificar-prontidao-fabrica/checklists/requirements.md",
       "etapa": "E1"
+    },
+    "plan": {
+      "path": "specs/001-verificar-prontidao-fabrica/plan.md",
+      "etapa": "E2"
+    },
+    "research": {
+      "path": "specs/001-verificar-prontidao-fabrica/research.md",
+      "etapa": "E2"
+    },
+    "quickstart": {
+      "path": "specs/001-verificar-prontidao-fabrica/quickstart.md",
+      "etapa": "E2"
+    },
+    "tasks": {
+      "path": "specs/001-verificar-prontidao-fabrica/tasks.md",
+      "etapa": "E3"
     }
   },
   "gates": {
@@ -30,6 +46,53 @@
       "status": "aprovado",
       "checklist": "16/16",
       "devolucoes": 0
+    },
+    "E2": {
+      "status": "validado",
+      "constitution_check": "conforme",
+      "revisao_usuario": "aprovado",
+      "ponto_de_retomada": "E3",
+      "devolucoes": 0,
+      "verificacoes": {
+        "preparacao_spec_kit": "concluida",
+        "teste_estrutural": "Amostra positiva aceita e comando fora da seção rejeitado. README atual rejeitado pela ausência esperada da seção.",
+        "diff_readme": "git diff --check main -- README.md retornou 0",
+        "aceite_do_readme": "pendente da implementacao"
+      },
+      "aprovado_em": "2026-11-22T09:18:50.3613266-03:00",
+      "mensagem": "Aprovo o plano técnico da feature 001-verificar-prontidao-fabrica."
+    },
+    "E3": {
+      "status": "validado",
+      "tarefas": [
+        "T001",
+        "T002",
+        "T003"
+      ],
+      "historias": [
+        "US1"
+      ],
+      "devolucoes": 0
+    },
+    "E3.5": {
+      "status": "validado",
+      "cobertura_funcional": "5/5",
+      "criterios_rastreados": "3/3",
+      "constituicao": "conforme",
+      "achados_criticos": 0,
+      "duplicidades": 0,
+      "ambiguidades": 0,
+      "achados": [
+        {
+          "id": "F1",
+          "severidade": "baixa",
+          "local": "spec.md:5",
+          "resumo": "O cabeçalho da especificação ainda diz Rascunho. A aprovação está registrada no Checkpoint 1 em state.json."
+        }
+      ],
+      "pronto_para_E4": true,
+      "ponto_de_retomada": "E4",
+      "pausa": "solicitada_pelo_usuario"
     }
   },
   "tasks_done": [],
@@ -41,5 +104,5 @@
       "mensagem": "Aprovo a especificação `001-verificar-prontidao-fabrica`. Registre a aprovação e pare. Vou pedir o plano técnico depois."
     }
   },
-  "updated_at": "2026-11-22T08:59:46.7658647-03:00"
+  "updated_at": "2026-11-22T09:18:50.3613266-03:00"
 }
