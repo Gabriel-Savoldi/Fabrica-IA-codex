@@ -26,6 +26,17 @@ Se precisar inicializar o Spec Kit 1.4.3 em um novo projeto Windows, o comando v
 specify init --here --script ps --integration codex '--integration-options=--skills' --non-interactive
 ```
 
+## Como verificar se a fábrica está pronta
+
+Na raiz do repositório, execute os comandos abaixo para verificar se a fábrica está pronta.
+
+| Verificação | Comando | Resultado esperado | Sinal de pendência |
+| --- | --- | --- | --- |
+| Branch atual | `git branch --show-current` | Nome da branch base para uma demanda nova, como `main` neste repositório, ou nome da branch da feature ao retomar. | Nome diferente do esperado ou saída vazia, como em `HEAD` destacado. |
+| Árvore de trabalho | `git status --porcelain` | Saída vazia e código `0` indicam árvore limpa. | Linhas na saída indicam alterações ou arquivos não rastreados, mesmo com código `0`. |
+| Remoto `origin` | `git remote get-url origin` | URL configurada para o remoto `origin`. | Erro na consulta, por exemplo, quando `origin` não está configurado. |
+| Autenticação do GitHub CLI | `gh auth status` | Conta autenticada no host GitHub do projeto e código `0`. | Falha de autenticação no host esperado ou comando `gh` indisponível. |
+
 ## Acionar a fábrica
 
 Para iniciar pelos requisitos, envie ao Codex uma mensagem como esta.

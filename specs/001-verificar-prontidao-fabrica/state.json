@@ -10,7 +10,7 @@
     "build": null
   },
   "last_reviewed_commit": null,
-  "stage": "ANALISANDO",
+  "stage": "IMPLEMENTANDO",
   "artifacts": {
     "spec": {
       "path": "specs/001-verificar-prontidao-fabrica/spec.md",
@@ -35,6 +35,10 @@
     "tasks": {
       "path": "specs/001-verificar-prontidao-fabrica/tasks.md",
       "etapa": "E3"
+    },
+    "readme": {
+      "path": "README.md",
+      "etapa": "E4"
     }
   },
   "gates": {
@@ -93,9 +97,41 @@
       "pronto_para_E4": true,
       "ponto_de_retomada": "E4",
       "pausa": "solicitada_pelo_usuario"
+    },
+    "E4": {
+      "status": "validado",
+      "fase": 3,
+      "historia": "US1",
+      "tarefas": [
+        "T001",
+        "T002",
+        "T003"
+      ],
+      "verificacoes": {
+        "teste_estrutural": {
+          "comando": "state.json.commands.test",
+          "codigo": 0,
+          "saida": "Título confirmado e 4 de 4 comandos encontrados."
+        },
+        "diff_readme": {
+          "comando": "git diff --check main -- README.md",
+          "codigo": 0
+        },
+        "diff": {
+          "comando": "git diff --check",
+          "codigo": 0
+        }
+      },
+      "ponto_de_retomada": "E5",
+      "pausa": "solicitada_pelo_usuario",
+      "devolucoes": 0
     }
   },
-  "tasks_done": [],
+  "tasks_done": [
+    "T001",
+    "T002",
+    "T003"
+  ],
   "blockers": [],
   "human_checkpoints": {
     "specification_review": {
@@ -104,5 +140,5 @@
       "mensagem": "Aprovo a especificação `001-verificar-prontidao-fabrica`. Registre a aprovação e pare. Vou pedir o plano técnico depois."
     }
   },
-  "updated_at": "2026-11-22T09:18:50.3613266-03:00"
+  "updated_at": "2026-11-22T09:27:26.1333881-03:00"
 }
