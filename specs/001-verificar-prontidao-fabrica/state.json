@@ -1,0 +1,43 @@
+{
+  "feature": "001-verificar-prontidao-fabrica",
+  "base_branch": "main",
+  "branch": "001-verificar-prontidao-fabrica",
+  "gh_path": "gh",
+  "pull_request": null,
+  "commands": {
+    "test": null,
+    "lint": null,
+    "build": null
+  },
+  "last_reviewed_commit": null,
+  "stage": "AGUARDANDO_REVISAO_HUMANA",
+  "artifacts": {
+    "spec": {
+      "path": "specs/001-verificar-prontidao-fabrica/spec.md",
+      "etapa": "E1"
+    },
+    "requirements_checklist": {
+      "path": "specs/001-verificar-prontidao-fabrica/checklists/requirements.md",
+      "etapa": "E1"
+    }
+  },
+  "gates": {
+    "E0": {
+      "status": "aprovado",
+      "base_commit": "acd267249926bb2a29464c43910d0786666977a5"
+    },
+    "E1": {
+      "status": "aguardando_revisao_humana",
+      "checklist": "16/16",
+      "devolucoes": 0
+    }
+  },
+  "tasks_done": [],
+  "blockers": [],
+  "human_checkpoints": {
+    "specification_review": {
+      "status": "pendente"
+    }
+  },
+  "updated_at": "2026-11-22T08:52:10.0661906-03:00"
+}
