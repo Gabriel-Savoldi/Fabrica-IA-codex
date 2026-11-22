@@ -43,6 +43,10 @@
     "review_report": {
       "path": "specs/001-verificar-prontidao-fabrica/review-report.md",
       "etapa": "E5"
+    },
+    "qa_report": {
+      "path": "specs/001-verificar-prontidao-fabrica/qa-report.md",
+      "etapa": "E6"
     }
   },
   "gates": {
@@ -151,6 +155,27 @@
       },
       "ponto_de_retomada": "E6",
       "devolucoes": 0
+    },
+    "E6": {
+      "status": "aprovado",
+      "parecer": "aprovado",
+      "commit_testado": "5a0ab966f8abb5c6abe39b7d62a2bb46fb959907",
+      "roteiro_aprovado": "4/4",
+      "comandos_qa_com_codigo_zero": "6/6",
+      "resultados_positivos_retomada": "4/4",
+      "resultados_positivos_demanda_nova_main": "4/4",
+      "exemplos_divergentes": "4/4",
+      "cobertura_funcional": "5/5",
+      "criterios_de_aceite": "3/3",
+      "defeitos": 0,
+      "arquivos_de_teste_criados_ou_alterados": [],
+      "verificacoes_orquestrador": {
+        "teste_estrutural": 0,
+        "diff_readme": 0
+      },
+      "ponto_de_retomada": "E7",
+      "pausa": "solicitada_pelo_usuario",
+      "devolucoes": 0
     }
   },
   "tasks_done": [
@@ -166,5 +191,5 @@
       "mensagem": "Aprovo a especificação `001-verificar-prontidao-fabrica`. Registre a aprovação e pare. Vou pedir o plano técnico depois."
     }
   },
-  "updated_at": "2026-11-22T09:33:45.0131604-03:00"
+  "updated_at": "2026-11-22T09:37:06.1996806-03:00"
 }
