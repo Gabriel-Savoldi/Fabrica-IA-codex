@@ -1,50 +1,54 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Fabrica-IA-codex Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Integração da fábrica no Codex
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+As mudanças neste repositório devem atender à adaptação da fábrica para o Codex e aos critérios
+da demanda aprovada. A integração usa a configuração e os subagentes locais do Codex, as skills
+do Spec Kit e o Git para organizar a entrega.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### II. Especificação rastreável
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+Cada demanda da fábrica deve ter uma especificação com critérios de sucesso verificáveis. O
+plano, as tarefas e os testes devem referenciar os requisitos e as histórias que cobrem. Use os
+artefatos do Spec Kit para registrar requisitos, decisões e esclarecimentos.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### III. Delegação sequencial e estado retomável
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+A sessão principal deve acionar um subagente por vez, com um escopo definido. Antes de avançar,
+o orquestrador deve conferir os artefatos e verificações da etapa. A branch da demanda e o
+`state.json` registram o trabalho e o ponto de retomada.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### IV. Verificação conforme a mudança
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+O plano deve declarar um comando de teste que verifique o comportamento alterado. Mudanças na
+fábrica devem ser conferidas no formato correspondente e no fluxo que afetam. O orquestrador
+deve registrar os comandos executados e seus resultados antes de apresentar a entrega.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### V. Credenciais com acesso mínimo
+
+As operações autenticadas devem usar credenciais com as permissões necessárias para o
+repositório da demanda. Mantenha tokens e chaves em mecanismos de credenciais da sessão,
+fora dos arquivos versionados e dos relatórios.
+
+## Escopo do repositório
+
+Este repositório contém a adaptação da fábrica para o Codex. O código e as regras de negócio
+de uma aplicação de demonstração pertencem ao projeto em que a aplicação for testada.
+
+## Fluxo de trabalho
+
+O Analista entrega a especificação para aprovação humana. Após a aprovação e o pedido para
+prosseguir, a fábrica executa plano, tarefas, análise, implementação, revisão e testes de
+aceite. Com autorização para publicar, o orquestrador abre o PR e verifica a CI quando
+configurada. O merge na branch base cabe à pessoa responsável.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+O plano deve verificar a conformidade com estes princípios e justificar eventuais exceções.
+A pessoa responsável revisa as alterações da constituição no PR com sua motivação e versão.
+Use versão maior para mudanças incompatíveis, versão menor para novos princípios e versão de
+correção para ajustes de redação.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2026-11-22 | **Last Amended**: 2026-11-22
